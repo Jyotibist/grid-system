@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.wrapper{
+    background: rgb(122, 96, 122);
+    padding: 10px;
+    display: grid;
+    gap: 5px;
+    /* text-align: center; */
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+     "h1 h1 h1"
+     "header header header"
+     "banner banner off1"
+     "banner banner off2"
+     "sm main main"
+     "recent main main"
+     "tags main main"
+     "footer footer footer"
+     ;
+
+    
+}
+.wrapper > *{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding:1rem;
+}
+
+h1{
+    background: rgb(163, 83, 83);
+    grid-area: h1;
+}
+header{
+    background:pink;
+    grid-area: header;
+}
+
+.banner{
+    background: linear-gradient(rgb(191, 83, 83),orange, rgb(84, 84, 207));
+    grid-area: banner;
+    min-height: 20vh;
+
+}
+.off1{
+    background: rgb(99, 32, 198);
+    grid-area: off1;
+}
+.off2{
+    background: rgb(238, 133, 213);
+    grid-area: off2;
+}
+.side-menu{
+    background: rgb(71, 221, 163);
+    grid-area: sm;
+}
+.recent{
+    background: rgb(99, 32, 198);
+    grid-area: recent;
+}
+.tags{
+    background: rgb(228, 48, 48);
+    grid-area: tags;
+}
+.main{
+    background: rgb(90, 109, 58);
+    grid-area: main;
+}
+footer{
+    background: #000;
+    color: white;
+    grid-area: footer;
+}
+
+/* ipads 1024px and mobile 576px */
+@media (576px < width <= 950px){
+
+    .wrapper{
+        background: rgb(122, 96, 122);
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+         "h1 h1"
+         "header header"
+         "banner banner"
+         "off1 off2"
+         "sm sm"
+         "main main"
+         "recent tags"
+         "footer footer"
+         ;
+    }
+    
+
+}
+/* @media (max-width:1024px) {
+    
+} */
+@media(max-width:576px){
+    .wrapper{
+        background: rgb(219, 84, 219);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+         "h1"
+         "header"
+         "banner"
+         "off1"
+         "off2"
+         "sm"
+         "main"
+         "recent"
+         "tags"
+         "footer"
+         ;
+    }
+
+}
